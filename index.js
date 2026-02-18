@@ -10,7 +10,7 @@ app.use(express.json());
 
 // Ruta raíz para prueba
 app.get('/', (req, res) => {
-    res.send("Servidor La Fronterisima funcionando ✅");
+    res.send("Servidor funcionando ✅");
 });
 
 // Endpoint para devolver la radio
@@ -20,7 +20,7 @@ app.get('/radios', (req, res) => {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
             console.error('Error leyendo radios.json:', err);
-            return res.status(500).json({ error: 'No se pudo leer la lista de radios' });
+            return res.status(500).json({ error: 'No se ejecuta la radio' });
         }
         res.json(JSON.parse(data));
     });
